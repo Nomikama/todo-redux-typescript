@@ -1,0 +1,27 @@
+.show-create-todo-form {
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	line-height: 19px;
+	letter-spacing: 0.15px;
+	color: #767676;
+	cursor: pointer;
+	transition: color 0.3s;
+
+	&:hover {
+		color: darken(#767676, 10%);
+
+		&::before {
+			filter: brightness(50%);
+		}
+	}
+
+	&::before {
+		content: '';
+		padding: 6px;
+		margin-right: 4px;
+		transition: filter 0.3s;
+		background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYgMVYxMSIgc3Ryb2tlPSIjODY4Njg2IiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xIDZIMTEiIHN0cm9rZT0iIzg2ODY4NiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K");
+		background-repeat: no-repeat;
+	}
+}

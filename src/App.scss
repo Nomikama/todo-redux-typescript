@@ -1,0 +1,41 @@
+@import "./global";
+
+.app {
+	background-color: #fff;
+	color: #000000;
+
+	&__container {
+		display: flex;
+		width: 100%;
+		max-width: 746px;
+		min-height: 530px;
+		margin: 20px auto;
+		border: 1px solid #e6e6e6;
+		border-radius: 3px;
+	}
+
+	&__lcol {
+		background-color: #F4F6F8;
+		width: 100%;
+		max-width: 200px;
+		padding: 60px 20px;
+		border-right: 1px solid #e6e6e6;
+	}
+
+	&__rcol {
+		width: 100%;
+		max-width: 545px;
+		background-color: #fff;
+		padding: 56px 57px;
+	}
+}
+
+.category {
+	&__all {}
+
+	&__list {}
+
+	&__create {
+		position: relative;
+	}
+}

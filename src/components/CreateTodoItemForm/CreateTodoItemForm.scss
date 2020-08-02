@@ -1,0 +1,51 @@
+.create-todo-item-form {
+	background-color: #fff;
+
+	input[type="text"] {
+		display: block;
+		width: 100%;
+		padding: 9px 15px;
+		border: 1px solid #EFEFEF;
+		border-radius: 4px;
+		font-size: 14px;
+		line-height: 17px;
+		letter-spacing: 0.15px;
+		margin-bottom: 16px;
+	}
+
+	button.create-task {
+		background: #4DD599;
+		color: #fff;
+		font-size: 14px;
+		line-height: 17px;
+		letter-spacing: 0.15px;
+		border-radius: 4px;
+		padding: 10px 15px;
+		margin-right: 9px;
+		border: none;
+		outline: none;
+		transition: background 0.3s;
+
+		&:hover {
+			background-color: darken(#4DD599, 10%);
+		}
+	}
+
+	button.cancel {
+		background: #F4F6F8;
+		color: #9C9C9C;
+		font-size: 14px;
+		line-height: 17px;
+		letter-spacing: 0.15px;
+		border-radius: 4px;
+		padding: 10px 15px;
+		margin-right: 9px;
+		border: none;
+		outline: none;
+		transition: background 0.3s;
+
+		&:hover {
+			background-color: #ECECEC;
+		}
+	}
+}

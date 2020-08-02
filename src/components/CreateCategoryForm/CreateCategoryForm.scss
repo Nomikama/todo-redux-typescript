@@ -1,0 +1,168 @@
+.create-category-form {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 235px;
+	height: 148px;
+	border-radius: 10px;
+	box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
+	padding: 17px;
+	background-color: #fff;
+
+	&__close-btn {
+		position: absolute;
+		right: -10px;
+		top: -10px;
+		padding: 11px;
+		transition: filter 0.3s;
+		background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMjEiIHZpZXdCb3g9IjAgMCAyMSAyMSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwLjMxNSAwQzQuNjI3MzcgMCAwIDQuNjI3MzcgMCAxMC4zMTVDMCAxNi4wMDI2IDQuNjI3MzcgMjAuNjMgMTAuMzE1IDIwLjYzQzE2LjAwMjYgMjAuNjMgMjAuNjMgMTYuMDAyNiAyMC42MyAxMC4zMTVDMjAuNjMgNC42MjczNyAxNi4wMDI2IDAgMTAuMzE1IDBaTTE0LjA0OTcgMTIuOTI4QzE0LjEyNjUgMTMuMDAwOSAxNC4xODc5IDEzLjA4ODUgMTQuMjMwMyAxMy4xODU1QzE0LjI3MjcgMTMuMjgyNiAxNC4yOTUyIDEzLjM4NzIgMTQuMjk2NiAxMy40OTMxQzE0LjI5OCAxMy41OTkgMTQuMjc4MSAxMy43MDQxIDE0LjIzODIgMTMuODAyMkMxNC4xOTgzIDEzLjkwMDMgMTQuMTM5MiAxMy45ODk0IDE0LjA2NDMgMTQuMDY0M0MxMy45ODk0IDE0LjEzOTIgMTMuOTAwMyAxNC4xOTgzIDEzLjgwMjIgMTQuMjM4MkMxMy43MDQxIDE0LjI3ODEgMTMuNTk5IDE0LjI5OCAxMy40OTMxIDE0LjI5NjZDMTMuMzg3MiAxNC4yOTUyIDEzLjI4MjYgMTQuMjcyNyAxMy4xODU1IDE0LjIzMDNDMTMuMDg4NSAxNC4xODc5IDEzLjAwMDkgMTQuMTI2NSAxMi45MjggMTQuMDQ5N0wxMC4zMTUgMTEuNDM3M0w3LjcwMjAzIDE0LjA0OTdDNy41NTIwMiAxNC4xOTIyIDcuMzUyMjYgMTQuMjcwNSA3LjE0NTM2IDE0LjI2NzlDNi45Mzg0NiAxNC4yNjUyIDYuNzQwNzcgMTQuMTgxOSA2LjU5NDQ2IDE0LjAzNTVDNi40NDgxNCAxMy44ODkyIDYuMzY0NzcgMTMuNjkxNSA2LjM2MjEyIDEzLjQ4NDZDNi4zNTk0NyAxMy4yNzc3IDYuNDM3NzUgMTMuMDc4IDYuNTgwMjggMTIuOTI4TDkuMTkyNzUgMTAuMzE1TDYuNTgwMjggNy43MDIwM0M2LjQzNzc1IDcuNTUyMDIgNi4zNTk0NyA3LjM1MjI2IDYuMzYyMTIgNy4xNDUzNkM2LjM2NDc3IDYuOTM4NDYgNi40NDgxNCA2Ljc0MDc3IDYuNTk0NDYgNi41OTQ0NkM2Ljc0MDc3IDYuNDQ4MTQgNi45Mzg0NiA2LjM2NDc3IDcuMTQ1MzYgNi4zNjIxMkM3LjM1MjI2IDYuMzU5NDcgNy41NTIwMiA2LjQzNzc1IDcuNzAyMDMgNi41ODAyOEwxMC4zMTUgOS4xOTI3NUwxMi45MjggNi41ODAyOEMxMy4wNzggNi40Mzc3NSAxMy4yNzc3IDYuMzU5NDcgMTMuNDg0NiA2LjM2MjEyQzEzLjY5MTUgNi4zNjQ3NyAxMy44ODkyIDYuNDQ4MTQgMTQuMDM1NSA2LjU5NDQ2QzE0LjE4MTkgNi43NDA3NyAxNC4yNjUyIDYuOTM4NDYgMTQuMjY3OSA3LjE0NTM2QzE0LjI3MDUgNy4zNTIyNiAxNC4xOTIyIDcuNTUyMDIgMTQuMDQ5NyA3LjcwMjAzTDExLjQzNzMgMTAuMzE1TDE0LjA0OTcgMTIuOTI4WiIgZmlsbD0iIzVDNUM1QyIvPgo8L3N2Zz4K");
+		background-repeat: no-repeat;
+
+		&:hover {
+			filter: brightness(50%);
+		}
+	}
+
+	input[type="text"] {
+		width: 100%;
+		padding: 7px 10px;
+		border-radius: 4px;
+		border: 1px solid #EFEFEF;
+		margin-bottom: 13px;
+		font-size: 14px;
+		line-height: 17px;
+		letter-spacing: 0.15px;
+	}
+}
+
+.select-category-color {
+	display: flex;
+}
+
+.select-color {
+	width: 20px;
+	height: 20px;
+	background-color: #000;
+	margin-right: 5px;
+	border-radius: 50%;
+	margin-bottom: 13px;
+	border: 2px solid transparent;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&--gray {
+		background-color: #525252;
+
+		&.active {
+			border: 2px solid darken(#525252, 10%);
+		}
+
+		&:hover {
+			border: 2px solid darken(#525252, 5%);
+		}
+	}
+
+	&--green {
+		background-color: #42B883;
+
+		&.active {
+			border: 2px solid darken(#42B883, 10%);
+		}
+
+		&:hover {
+			border: 2px solid darken(#42B883, 5%);
+		}
+	}
+
+	&--blue {
+		background-color: #64C4ED;
+
+		&.active {
+			border: 2px solid darken(#64C4ED, 10%);
+		}
+
+		&:hover {
+			border: 2px solid darken(#64C4ED, 5%);
+		}
+	}
+
+	&--pink {
+		background-color: #FFBBCC;
+
+		&.active {
+			border: 2px solid darken(#FFBBCC, 10%);
+		}
+
+		&:hover {
+			border: 2px solid darken(#FFBBCC, 5%);
+		}
+	}
+
+	&--lime {
+		background-color: #B6E6BD;
+
+		&.active {
+			border: 2px solid darken(#B6E6BD, 10%);
+		}
+
+		&:hover {
+			border: 2px solid darken(#B6E6BD, 5%);
+		}
+	}
+
+	&--purple {
+		background-color: #C355F5;
+
+		&.active {
+			border: 2px solid darken(#C355F5, 10%);
+		}
+
+		&:hover {
+			border: 2px solid darken(#C355F5, 5%);
+		}
+	}
+
+	&--black {
+		background-color: #09011A;
+
+		&.active {
+			border: 2px solid darken(#09011A, 10%);
+		}
+
+		&:hover {
+			border: 2px solid darken(#09011A, 5%);
+		}
+	}
+
+	&--red {
+		background-color: #FF6464;
+
+		&.active {
+			border: 2px solid darken(#FF6464, 10%);
+		}
+
+		&:hover {
+			border: 2px solid darken(#FF6464, 5%);
+		}
+	}
+}
+
+.create-category-btn {
+	width: 100%;
+	border-radius: 4px;
+	color: #fff;
+	background-color: #4DD599;
+	padding: 10px 0;
+	border: none;
+	outline: none;
+	font-size: 14px;
+	line-height: 17px;
+	letter-spacing: 0.15px;
+	transition: background 0.3s;
+
+	&:hover {
+		background-color: darken(#4DD599, 10%);
+	}
+}

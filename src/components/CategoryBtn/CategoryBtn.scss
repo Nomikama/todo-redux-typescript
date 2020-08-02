@@ -1,0 +1,67 @@
+.category__item {
+	position: relative;
+
+	margin-bottom: 5px;
+
+	&:last-child {
+		margin-bottom: 40px;
+	}
+}
+
+.category__item-container {
+	padding: 12px;
+	font-size: 14px;
+	line-height: 17px;
+	letter-spacing: 0.15px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	border-radius: 4px;
+	transition: background 0.3s;
+	cursor: pointer;
+
+	&:hover:not(.active) {
+		background: #ffffff1a;
+		box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+	}
+
+	&.active {
+		background: #fff;
+		box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+
+		&:hover~.category__remove {
+			display: block;
+		}
+	}
+}
+
+.category__color {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: #64C4ED;
+	margin-right: 5px;
+}
+
+.category__remove {
+	display: none;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	width: 10px;
+	height: 10px;
+	background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMCAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYuMjQ3NDEgNUw5LjczODk5IDEuNTA4NDJDOS45MDQ3IDEuMzQzIDkuOTk3OTEgMS4xMTg1MyA5Ljk5ODEyIDAuODg0MzkzQzkuOTk4MzIgMC42NTAyNTEgOS45MDU1MSAwLjQyNTYxNyA5Ljc0MDA5IDAuMjU5OTA3QzkuNTc0NjggMC4wOTQxOTczIDkuMzUwMjEgMC4wMDA5ODY1ODkgOS4xMTYwNiAwLjAwMDc3OTgxMUM4Ljg4MTkyIDAuMDAwNTczMDMzIDguNjU3MjkgMC4wOTMzODcyIDguNDkxNTggMC4yNTg4MDRMNSAzLjc1MDM4TDEuNTA4NDIgMC4yNTg4MDRDMS4zNDI3MSAwLjA5MzA5NDggMS4xMTc5NiAwIDAuODgzNjEzIDBDMC42NDkyNjQgMCAwLjQyNDUxNCAwLjA5MzA5NDggMC4yNTg4MDQgMC4yNTg4MDRDMC4wOTMwOTQ4IDAuNDI0NTE0IDAgMC42NDkyNjQgMCAwLjg4MzYxM0MwIDEuMTE3OTYgMC4wOTMwOTQ4IDEuMzQyNzEgMC4yNTg4MDQgMS41MDg0MkwzLjc1MDM4IDVMMC4yNTg4MDQgOC40OTE1OEMwLjA5MzA5NDggOC42NTcyOSAwIDguODgyMDQgMCA5LjExNjM5QzAgOS4zNTA3NCAwLjA5MzA5NDggOS41NzU0OSAwLjI1ODgwNCA5Ljc0MTJDMC40MjQ1MTQgOS45MDY5MSAwLjY0OTI2NCAxMCAwLjg4MzYxMyAxMEMxLjExNzk2IDEwIDEuMzQyNzEgOS45MDY5MSAxLjUwODQyIDkuNzQxMkw1IDYuMjQ5NjJMOC40OTE1OCA5Ljc0MTJDOC42NTcyOSA5LjkwNjkxIDguODgyMDQgMTAgOS4xMTYzOSAxMEM5LjM1MDc0IDEwIDkuNTc1NDkgOS45MDY5MSA5Ljc0MTIgOS43NDEyQzkuOTA2OTEgOS41NzU0OSAxMCA5LjM1MDc0IDEwIDkuMTE2MzlDMTAgOC44ODIwNCA5LjkwNjkxIDguNjU3MjkgOS43NDEyIDguNDkxNThMNi4yNDc0MSA1WiIgZmlsbD0iI0UzRTNFMyIvPgo8L3N2Zz4K");
+	background-repeat: no-repeat;
+	background-position: center center;
+	margin-top: 5px;
+	padding: 10px;
+	transition: filter 0.3s;
+	cursor: pointer;
+	z-index: 2;
+
+	&:hover {
+		display: block;
+		filter: brightness(50%);
+	}
+}
