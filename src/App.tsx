@@ -8,11 +8,11 @@ import {
   CreateTodoItemForm,
   CreateCategoryBtn,
   CreateTodoItemBtn,
-} from "./connectors";
+} from "./containers";
 import "./App.scss";
 
 export const App: React.FC = () => {
-  let showForm = false;
+  let showForm = true;
   return (
     <div className="app">
       <div className="app__container">
