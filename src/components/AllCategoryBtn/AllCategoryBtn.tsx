@@ -1,6 +1,19 @@
 import React from "react";
-import './AllCategoryBtn.scss';
+import "./AllCategoryBtn.scss";
 
-export const AllCategoryBtn: React.FC = ()=>(
-<div className="all-category active">Все задачи</div>
-)
+type IAllCategoryBtn = {
+  checkActiveCategory: boolean;
+  selectAllTaskBtn(): void;
+};
+
+export const AllCategoryBtn: React.FC<IAllCategoryBtn> = ({
+  checkActiveCategory,
+  selectAllTaskBtn,
+}) => (
+  <div
+    className={checkActiveCategory ? "all-category active" : "all-category"}
+    onClick={selectAllTaskBtn}
+  >
+    Все задачи
+  </div>
+);

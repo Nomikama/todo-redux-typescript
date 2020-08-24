@@ -1,20 +1,11 @@
-import { AllCategoryBtn } from './AllCategoryBtn';
-import { CategoryBtn } from './CategoryBtn';
-import { CategoryTitle } from './CategoryTitle';
-import { CreateCategoryBtn } from './CreateCategoryBtn';
-import { CreateTodoItemBtn } from './CreateTodoItemBtn';
-import { CreateTodoItemForm } from './CreateTodoItemForm';
-import { CreateCategoryForm } from './CreateCategoryForm';
-import { TodoItem } from './TodoItem';
-
-
-export {
-	AllCategoryBtn,
-	CategoryBtn,
-	CategoryTitle,
-	CreateCategoryBtn,
-	CreateTodoItemBtn,
-	CreateTodoItemForm,
-	CreateCategoryForm,
-	TodoItem
-}
+export * from './AllCategoryBtn';
+export * from './CategoryBtn';
+export * from './CategoryTitle';
+export * from './CreateCategoryBtn';
+export * from './CreateTodoItemBtn';
+export * from './CreateTodoItemForm';
+export * from './HandlerCreateTodoForm';
+export * from './HandlerCreateCategoryForm';
+export * from './TodoItem';
+export * from './CategoryTitle';
+export * from './CategoryTitle';

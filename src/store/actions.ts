@@ -1,24 +1,35 @@
-export const TODO__CREATE_TASK: string = 'ADD_NEW_TODO_TASK_ITEM';
-export const TODO__CREATE_CATEGORY: string = 'ADD_NEW_TODO_CATEGORY_ITEM';
-export const TODO__DELETE_TASK: string = 'DELETE_TODO_CATEGORY_ITEM';
-export const TODO__DELETE_CATEGORY: string = 'DELETE_TODO_CATEGORY_ITEM';
+import {
+  ITodoCategories,
+  ITodoTaskList,
+  ToDoActionsTypes,
+  TODO__CREATE_CATEGORY,
+  TODO__CREATE_TASK,
+  TODO__DELETE_CATEGORY,
+  TODO__DELETE_TASK,
+  TODO__HANDLERSTATUS_TASK,
+  TODO__SELECT_CATEGORY_ID,
+} from "./types";
 
-export const APP__SHOW_CREATE_CATEGORY_FORM: string = "SHOW_CREATE_CATEGORY_FORM";
-export const APP__SHOW_CREATE_TASK_FORM: string = "SHOW_CREATE_TASK_FORM";
+export const createNewCategory = (data: ITodoCategories): ToDoActionsTypes => {
+  return { type: TODO__CREATE_CATEGORY, payload: data };
+};
 
-export interface NewItem{
-	id: number,
-	name: string,
-	color: string,
-	taskList: [{
-		id: number,
-		category: string,
-		task: string,
-		done: boolean
-	}]
-}
+export const deleteCategory = (id: number): ToDoActionsTypes => {
+  return { type: TODO__DELETE_CATEGORY, payload: id };
+};
 
-interface CreateNewTask{
-	type: typeof TODO__CREATE_TASK;
-	payload: NewItem
-}
+export const selectActiveID = (id: number): ToDoActionsTypes => {
+  return { type: TODO__SELECT_CATEGORY_ID, payload: id };
+};
+
+export const createTask = (data: ITodoTaskList): ToDoActionsTypes => {
+  return { type: TODO__CREATE_TASK, payload: data };
+};
+
+export const deleteTask = (id: number): ToDoActionsTypes => {
+  return { type: TODO__DELETE_TASK, payload: id };
+};
+
+export const handlerComplateTask = (id: number): ToDoActionsTypes => {
+  return { type: TODO__HANDLERSTATUS_TASK, payload: id };
+};

@@ -23,4 +23,9 @@
 		box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
 		border-radius: 4px;
 	}
+
+	&:hover:not(.active) {
+		background: #ffffff1a;
+		box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+	}
 }

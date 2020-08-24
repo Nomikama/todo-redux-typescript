@@ -1,11 +1,30 @@
 import React from "react";
 import "./CategoryBtn.scss";
 
-export const CategoryBtn: React.FC = () => (
+type ICategoryBtn = {
+  name: string;
+  color: string;
+  active: boolean;
+  selectCategory(id: number): void;
+  removeCategory(id: number): void;
+  id: number;
+};
+
+export const CategoryBtn: React.FC<ICategoryBtn> = ({
+  name,
+  color,
+  active,
+  selectCategory,
+  id,
+  removeCategory,
+}) => (
   <div className="category__item">
-    <div className="category__item-container">
-      <span className="category__color"></span> Фронтенд
+    <div
+      className={active ? "category__item-container active" : "category__item-container"}
+      onClick={() => selectCategory(id)}
+    >
+      <span className="category__color" style={{ backgroundColor: color }}></span> {name}
     </div>
-    <span className="category__remove"></span>
+    <span className="category__remove" onClick={() => removeCategory(id)}></span>
   </div>
 );

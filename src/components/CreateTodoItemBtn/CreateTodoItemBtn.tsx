@@ -1,6 +1,12 @@
 import React from "react";
 import "./CreateTodoItemBtn.scss";
 
-export const CreateTodoItemBtn: React.FC = () => (
-  <div className="show-create-todo-form">Новая задача</div>
+interface ICreateTodoItemBtn {
+  showForm(): any;
+}
+
+export const CreateTodoItemBtn: React.FC<ICreateTodoItemBtn> = ({ showForm }) => (
+  <div className="show-create-todo-form" onClick={showForm}>
+    Новая задача
+  </div>
 );

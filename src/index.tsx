@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./normalize.scss";
 import { App } from "./App";
-import { rootReducer } from "./store/rootReducer";
-import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
 import reduxLogger from "redux-logger";
+import { rootReducer } from "./store/rootReducer";
 
 const store = createStore(rootReducer, applyMiddleware(reduxLogger));
 

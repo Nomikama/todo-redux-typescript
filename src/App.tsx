@@ -2,17 +2,14 @@ import React from "react";
 import {
   AllCategoryBtn,
   CategoryBtn,
-  CreateCategoryForm,
   CategoryTitle,
   TodoItem,
-  CreateTodoItemForm,
-  CreateCategoryBtn,
-  CreateTodoItemBtn,
+  HandlerCreateTodoForm,
+  HandlerCreateCategoryForm,
 } from "./containers";
 import "./App.scss";
 
 export const App: React.FC = () => {
-  let showForm = true;
   return (
     <div className="app">
       <div className="app__container">
@@ -23,24 +20,16 @@ export const App: React.FC = () => {
             </div>
             <div className="category__list">
               <CategoryBtn />
-              <CategoryBtn />
-              <CategoryBtn />
-              <CategoryBtn />
             </div>
             <div className="category__create">
-              {showForm ? <CreateCategoryForm /> : <CreateCategoryBtn />}
+              <HandlerCreateCategoryForm />
             </div>
           </div>
         </div>
         <div className="app__rcol">
           <CategoryTitle />
           <TodoItem />
-          <TodoItem />
-          <TodoItem />
-          <TodoItem />
-          <TodoItem />
-          <TodoItem />
-          {showForm ? <CreateTodoItemForm /> : <CreateTodoItemBtn />}
+          <HandlerCreateTodoForm />
         </div>
       </div>
     </div>
