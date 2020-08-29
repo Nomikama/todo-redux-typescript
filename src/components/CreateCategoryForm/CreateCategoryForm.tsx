@@ -41,6 +41,7 @@ export const CreateCategoryForm: React.FC<ICreateCategoryForm> = ({
               className={`select-color ${colorItem.htmlClass}`}
               type="radio"
               id={colorItem.htmlClass}
+              onClick={() => setCategoryColor(colorItem.color)}
               name="color"
             />
             <label htmlFor={colorItem.htmlClass} />
