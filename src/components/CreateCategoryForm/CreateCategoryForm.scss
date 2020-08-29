@@ -38,113 +38,164 @@
 
 .select-category-color {
 	display: flex;
+	margin-bottom: 5px;
 }
 
 .select-color {
-	width: 20px;
-	height: 20px;
-	background-color: #000;
-	margin-right: 5px;
-	border-radius: 50%;
-	margin-bottom: 13px;
-	border: 2px solid transparent;
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+
+	/* для элемента label связанного с .selected-color */
+	&+label {
+		display: inline-flex;
+		align-items: center;
+		user-select: none;
+	}
+
+	/* создание в label псевдоэлемента  before со следующими стилями */
+	&+label::before {
+		content: '';
+		display: inline-block;
+		width: 1em;
+		height: 1em;
+		flex-shrink: 0;
+		flex-grow: 0;
+		border: 2px solid transparent;
+		border-radius: 50%;
+		margin-right: 0.5em;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 50% 50%;
+	}
+
+	// &:not(:disabled):active+label::before {
+	// 	background-color: #b3d7ff;
+	// 	border-color: #b3d7ff;
+	// }
+
+	// &:focus:not(:checked)+label::before {
+	// 	border-color: #80bdff;
+	// }
+
+	&:disabled+label::before {
+		background-color: #e9ecef;
+	}
+
 
 	&:last-child {
 		margin-right: 0;
 	}
 
 	&--gray {
-		background-color: #525252;
-
-		&.active {
-			border: 2px solid darken(#525252, 10%);
+		&+label::before {
+			background-color: #525252;
 		}
 
-		&:hover {
+
+		&:not(:disabled):not(:checked)+label:hover::before {
 			border: 2px solid darken(#525252, 5%);
+		}
+
+		&:checked+label::before {
+			border: 2px solid darken(#525252, 20%);
 		}
 	}
 
 	&--green {
-		background-color: #42B883;
-
-		&.active {
-			border: 2px solid darken(#42B883, 10%);
+		&+label::before {
+			background-color: #42B883;
 		}
 
-		&:hover {
+		&:not(:disabled):not(:checked)+label:hover::before {
 			border: 2px solid darken(#42B883, 5%);
+		}
+
+		&:checked+label::before {
+			border: 2px solid darken(#42B883, 20%);
 		}
 	}
 
 	&--blue {
-		background-color: #64C4ED;
-
-		&.active {
-			border: 2px solid darken(#64C4ED, 10%);
+		&+label::before {
+			background-color: #64C4ED;
 		}
 
-		&:hover {
+		&:checked+label::before {
+			border: 2px solid darken(#64C4ED, 20%);
+		}
+
+		&:not(:disabled):not(:checked)+label:hover::before {
 			border: 2px solid darken(#64C4ED, 5%);
 		}
 	}
 
 	&--pink {
-		background-color: #FFBBCC;
-
-		&.active {
-			border: 2px solid darken(#FFBBCC, 10%);
+		&+label::before {
+			background-color: #FFBBCC;
 		}
 
-		&:hover {
+		&:checked+label::before {
+			border: 2px solid darken(#FFBBCC, 20%);
+		}
+
+		&:not(:disabled):not(:checked)+label:hover::before {
 			border: 2px solid darken(#FFBBCC, 5%);
 		}
 	}
 
 	&--lime {
-		background-color: #B6E6BD;
-
-		&.active {
-			border: 2px solid darken(#B6E6BD, 10%);
+		&+label::before {
+			background-color: #B6E6BD;
 		}
 
-		&:hover {
+		&:checked+label::before {
+			border: 2px solid darken(#B6E6BD, 20%);
+		}
+
+		&:not(:disabled):not(:checked)+label:hover::before {
 			border: 2px solid darken(#B6E6BD, 5%);
 		}
 	}
 
 	&--purple {
-		background-color: #C355F5;
-
-		&.active {
-			border: 2px solid darken(#C355F5, 10%);
+		&+label::before {
+			background-color: #C355F5;
 		}
 
-		&:hover {
+		&:checked+label::before {
+			border: 2px solid darken(#C355F5, 20%);
+		}
+
+		&:not(:disabled):not(:checked)+label:hover::before {
 			border: 2px solid darken(#C355F5, 5%);
 		}
 	}
 
 	&--black {
-		background-color: #09011A;
-
-		&.active {
-			border: 2px solid darken(#09011A, 10%);
+		&+label::before {
+			background-color: #09011A;
 		}
 
-		&:hover {
+		&:checked+label::before {
+			border: 2px solid darken(#09011A, 20%);
+		}
+
+		&:not(:disabled):not(:checked)+label:hover::before {
 			border: 2px solid darken(#09011A, 5%);
 		}
 	}
 
 	&--red {
-		background-color: #FF6464;
-
-		&.active {
-			border: 2px solid darken(#FF6464, 10%);
+		&+label::before {
+			background-color: #FF6464;
 		}
 
-		&:hover {
+		&:checked+label::before {
+			border: 2px solid darken(#FF6464, 20%);
+		}
+
+		&:not(:disabled):not(:checked)+label:hover::before {
 			border: 2px solid darken(#FF6464, 5%);
 		}
 	}

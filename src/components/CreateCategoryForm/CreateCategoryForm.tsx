@@ -8,6 +8,17 @@ interface ICreateCategoryForm {
   setCategoryColor(color: string): void;
 }
 
+const colorDB = [
+  { htmlClass: "select-color--gray", color: "#C9D1D3" },
+  { htmlClass: "select-color--green", color: "#42B883" },
+  { htmlClass: "select-color--blue", color: "#64C4ED" },
+  { htmlClass: "select-color--pink", color: "#FFBBCC" },
+  { htmlClass: "select-color--lime", color: "#B6E6BD" },
+  { htmlClass: "select-color--purple", color: "#C355F5" },
+  { htmlClass: "select-color--black", color: "#09011A" },
+  { htmlClass: "select-color--red", color: "#FF6464" },
+];
+
 export const CreateCategoryForm: React.FC<ICreateCategoryForm> = ({
   closeForm,
   sendData,
@@ -24,46 +35,17 @@ export const CreateCategoryForm: React.FC<ICreateCategoryForm> = ({
         autoFocus
       />
       <div className="select-category-color">
-        <span
-          className="select-color select-color--gray"
-          data-color="#C9D1D3"
-          onClick={() => setCategoryColor("#C9D1D3")}
-        ></span>
-        <span
-          className="select-color select-color--green"
-          data-color="#42B883"
-          onClick={() => setCategoryColor("#42B883")}
-        ></span>
-        <span
-          className="select-color select-color--blue"
-          data-color="#64C4ED"
-          onClick={() => setCategoryColor("#64C4ED")}
-        ></span>
-        <span
-          className="select-color select-color--pink"
-          data-color="#FFBBCC"
-          onClick={() => setCategoryColor("#FFBBCC")}
-        ></span>
-        <span
-          className="select-color select-color--lime"
-          data-color="#B6E6BD"
-          onClick={() => setCategoryColor("#B6E6BD")}
-        ></span>
-        <span
-          className="select-color select-color--purple"
-          data-color="#C355F5"
-          onClick={() => setCategoryColor("#C355F5")}
-        ></span>
-        <span
-          className="select-color select-color--black"
-          data-color="#09011A"
-          onClick={() => setCategoryColor("#09011A")}
-        ></span>
-        <span
-          className="select-color select-color--red"
-          data-color="#FF6464"
-          onClick={() => setCategoryColor("#FF6464")}
-        ></span>
+        {colorDB.map((colorItem) => (
+          <div className="radio">
+            <input
+              className={`select-color ${colorItem.htmlClass}`}
+              type="radio"
+              id={colorItem.htmlClass}
+              name="color"
+            />
+            <label htmlFor={colorItem.htmlClass} />
+          </div>
+        ))}
       </div>
       <button className="create-category-btn">Добавить</button>
     </form>

@@ -1,20 +1,8 @@
-import { AllCategoryBtn } from './AllCategoryBtn/AllCategoryBtn';
-import { CategoryBtn } from './CategoryBtn/CategoryBtn';
-import { CategoryTitle } from './CategoryTitle/CategoryTitle';
-import { CreateCategoryForm } from './CreateCategoryForm/CreateCategoryForm';
-import { CreateCategoryBtn } from './CreateCategoryBtn/CreateCategoryBtn';
-import { CreateTodoItemBtn } from './CreateTodoItemBtn/CreateTodoItemBtn';
-import { CreateTodoItemForm } from './CreateTodoItemForm/CreateTodoItemForm';
-import { TodoItem } from './TodoItem/TodoItem';
-
-
-export {
-	AllCategoryBtn as AllCategoryBtnComponents,
-	CategoryBtn as CategoryBtnComponents,
-	CategoryTitle as CategoryTitleComponents,
-	CreateCategoryForm as CreateCategoryFormComponents,
-	CreateCategoryBtn as CreateCategoryBtnComponents,
-	CreateTodoItemBtn as CreateTodoItemBtnComponents,
-	CreateTodoItemForm as CreateTodoItemFormComponents,
-	TodoItem as TodoItemComponents
-}
+export { AllCategoryBtn as AllCategoryBtnComponents } from './AllCategoryBtn/AllCategoryBtn';
+export { CategoryBtn as CategoryBtnComponents } from './CategoryBtn/CategoryBtn';
+export { CategoryTitle as CategoryTitleComponents } from './CategoryTitle/CategoryTitle';
+export { CreateCategoryBtn as CreateCategoryBtnComponents } from './CreateCategoryBtn/CreateCategoryBtn';
+export { CreateCategoryForm as CreateCategoryFormComponents } from './CreateCategoryForm/CreateCategoryForm';
+export { CreateTodoItemBtn as CreateTodoItemBtnComponents } from './CreateTodoItemBtn/CreateTodoItemBtn';
+export { CreateTodoItemForm as CreateTodoItemFormComponents } from './CreateTodoItemForm/CreateTodoItemForm';
+export { TodoItem as TodoItemComponents } from './TodoItem/TodoItem';
