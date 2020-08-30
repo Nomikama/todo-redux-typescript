@@ -1,23 +1,51 @@
 import React from "react";
 import "./CreateCategoryForm.scss";
 
-interface ICreateCategoryForm {
-  closeForm(status: false): void;
-  sendData(e: React.FormEvent<HTMLFormElement>): void;
-  inputFormHandler(name: string): void | false;
+interface ISelectCategoryColor {
   setCategoryColor(color: string): void;
 }
 
+interface ICreateCategoryForm extends ISelectCategoryColor {
+  closeForm(status: false): void;
+  sendData(e: React.FormEvent<HTMLFormElement>): void;
+  inputFormHandler(name: string): void | false;
+}
+
+type colorItem = {
+  id: string;
+  color: string;
+};
+
 const colorDB = [
-  { htmlClass: "select-color--gray", color: "#C9D1D3" },
-  { htmlClass: "select-color--green", color: "#42B883" },
-  { htmlClass: "select-color--blue", color: "#64C4ED" },
-  { htmlClass: "select-color--pink", color: "#FFBBCC" },
-  { htmlClass: "select-color--lime", color: "#B6E6BD" },
-  { htmlClass: "select-color--purple", color: "#C355F5" },
-  { htmlClass: "select-color--black", color: "#09011A" },
-  { htmlClass: "select-color--red", color: "#FF6464" },
+  { id: "color-gray", color: "#C9D1D3" },
+  { id: "color-green", color: "#42B883" },
+  { id: "color-blue", color: "#64C4ED" },
+  { id: "color-pink", color: "#FFBBCC" },
+  { id: "color-lime", color: "#B6E6BD" },
+  { id: "color-purple", color: "#C355F5" },
+  { id: "color-black", color: "#09011A" },
+  { id: "color-red", color: "#FF6464" },
 ];
+
+const SelectCategoryColor: React.FC<ISelectCategoryColor> = ({ setCategoryColor }) => {
+  return (
+    <div className="select-category-color">
+      {colorDB.map((colorItem: colorItem) => (
+        <div className="color-item">
+          <input
+            className={colorItem.id}
+            type="radio"
+            id={colorItem.id}
+            key={colorItem.color}
+            onClick={() => setCategoryColor(colorItem.color)}
+            name="select-color"
+          />
+          <label htmlFor={colorItem.id} style={{ backgroundColor: colorItem.color }} />
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export const CreateCategoryForm: React.FC<ICreateCategoryForm> = ({
   closeForm,
@@ -34,20 +62,7 @@ export const CreateCategoryForm: React.FC<ICreateCategoryForm> = ({
         onChange={(e) => inputFormHandler(e.target.value)}
         autoFocus
       />
-      <div className="select-category-color">
-        {colorDB.map((colorItem) => (
-          <div className="radio">
-            <input
-              className={`select-color ${colorItem.htmlClass}`}
-              type="radio"
-              id={colorItem.htmlClass}
-              onClick={() => setCategoryColor(colorItem.color)}
-              name="color"
-            />
-            <label htmlFor={colorItem.htmlClass} />
-          </div>
-        ))}
-      </div>
+      <SelectCategoryColor setCategoryColor={setCategoryColor} />
       <button className="create-category-btn">Добавить</button>
     </form>
   </div>

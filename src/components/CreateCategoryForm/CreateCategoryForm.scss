@@ -41,7 +41,7 @@
 	margin-bottom: 5px;
 }
 
-.select-color {
+input[name="select-color"] {
 	position: absolute;
 	z-index: -1;
 	opacity: 0;
@@ -52,7 +52,7 @@
 		user-select: none;
 	}
 
-	&+label::before {
+	&+label {
 		content: '';
 		display: inline-block;
 		width: 1em;
@@ -76,126 +76,21 @@
 	// 	border-color: #80bdff;
 	// }
 
-	&:disabled+label::before {
+	&:not(:disabled):not(:checked)+label:hover {
+		border: 2px solid darken(#42B883, 5%);
+	}
+
+	&:checked+label {
+		border: 2px solid darken(#42B883, 20%);
+	}
+
+	&:disabled+label {
 		background-color: #e9ecef;
 	}
 
 
 	&:last-child {
 		margin-right: 0;
-	}
-
-	&--gray {
-		&+label::before {
-			background-color: #525252;
-		}
-
-
-		&:not(:disabled):not(:checked)+label:hover::before {
-			border: 2px solid darken(#525252, 5%);
-		}
-
-		&:checked+label::before {
-			border: 2px solid darken(#525252, 20%);
-		}
-	}
-
-	&--green {
-		&+label::before {
-			background-color: #42B883;
-		}
-
-		&:not(:disabled):not(:checked)+label:hover::before {
-			border: 2px solid darken(#42B883, 5%);
-		}
-
-		&:checked+label::before {
-			border: 2px solid darken(#42B883, 20%);
-		}
-	}
-
-	&--blue {
-		&+label::before {
-			background-color: #64C4ED;
-		}
-
-		&:checked+label::before {
-			border: 2px solid darken(#64C4ED, 20%);
-		}
-
-		&:not(:disabled):not(:checked)+label:hover::before {
-			border: 2px solid darken(#64C4ED, 5%);
-		}
-	}
-
-	&--pink {
-		&+label::before {
-			background-color: #FFBBCC;
-		}
-
-		&:checked+label::before {
-			border: 2px solid darken(#FFBBCC, 20%);
-		}
-
-		&:not(:disabled):not(:checked)+label:hover::before {
-			border: 2px solid darken(#FFBBCC, 5%);
-		}
-	}
-
-	&--lime {
-		&+label::before {
-			background-color: #B6E6BD;
-		}
-
-		&:checked+label::before {
-			border: 2px solid darken(#B6E6BD, 20%);
-		}
-
-		&:not(:disabled):not(:checked)+label:hover::before {
-			border: 2px solid darken(#B6E6BD, 5%);
-		}
-	}
-
-	&--purple {
-		&+label::before {
-			background-color: #C355F5;
-		}
-
-		&:checked+label::before {
-			border: 2px solid darken(#C355F5, 20%);
-		}
-
-		&:not(:disabled):not(:checked)+label:hover::before {
-			border: 2px solid darken(#C355F5, 5%);
-		}
-	}
-
-	&--black {
-		&+label::before {
-			background-color: #09011A;
-		}
-
-		&:checked+label::before {
-			border: 2px solid darken(#09011A, 20%);
-		}
-
-		&:not(:disabled):not(:checked)+label:hover::before {
-			border: 2px solid darken(#09011A, 5%);
-		}
-	}
-
-	&--red {
-		&+label::before {
-			background-color: #FF6464;
-		}
-
-		&:checked+label::before {
-			border: 2px solid darken(#FF6464, 20%);
-		}
-
-		&:not(:disabled):not(:checked)+label:hover::before {
-			border: 2px solid darken(#FF6464, 5%);
-		}
 	}
 }
 
