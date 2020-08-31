@@ -31,13 +31,12 @@ const SelectCategoryColor: React.FC<ISelectCategoryColor> = ({ setCategoryColor 
   return (
     <div className="select-category-color">
       {colorDB.map((colorItem: colorItem) => (
-        <div className="color-item">
+        <div className="color-item" key={colorItem.color}>
           <input
             className={colorItem.id}
             type="radio"
             id={colorItem.id}
-            key={colorItem.color}
-            onClick={() => setCategoryColor(colorItem.color)}
+            onChange={() => setCategoryColor(colorItem.color)}
             name="select-color"
           />
           <label htmlFor={colorItem.id} style={{ backgroundColor: colorItem.color }} />
