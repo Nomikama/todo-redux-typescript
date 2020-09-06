@@ -1,13 +1,11 @@
 import React from "react";
+import "./App.scss";
 import {
   AllCategoryBtn,
   CategoryBtn,
-  CategoryTitle,
-  TodoItem,
-  HandlerCreateTodoForm,
   HandlerCreateCategoryForm,
+  HandlerTodoItem,
 } from "./containers";
-import "./App.scss";
 
 export const App: React.FC = () => {
   return (
@@ -27,9 +25,7 @@ export const App: React.FC = () => {
           </div>
         </div>
         <div className="app__rcol">
-          <CategoryTitle />
-          <TodoItem />
-          <HandlerCreateTodoForm />
+          <HandlerTodoItem />
         </div>
       </div>
     </div>
