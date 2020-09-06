@@ -19,31 +19,29 @@ export const AllTaskList: React.FC = () => {
     dispatch(deleteTask(id));
   };
 
-  const renderTodoItem = (
-    <>
-      {categoryList.map((category: ITodoCategories) => (
-        <div key={category.id}>
-          <CategoryTitle key={category.id} name={category.name} color={category.color} />
-
-          {taskList
-            .filter((task: ITodoTaskList) => task.category === category.id)
-            .map((todoItem: ITodoTaskList) => (
-              <TodoItem
-                key={todoItem.id}
-                taskName={todoItem.task}
-                id={todoItem.id}
-                status={todoItem.done}
-                toggleTaskStatus={toggleTaskStatus}
-                removeTask={removeTask}
-              />
-            ))}
-        </div>
-      ))}
-    </>
-  );
-
   if (taskList.length > 0) {
-    return renderTodoItem;
+    return (
+      <>
+        {categoryList.map((category: ITodoCategories) => (
+          <div key={category.id}>
+            <CategoryTitle key={category.id} name={category.name} color={category.color} />
+
+            {taskList
+              .filter((task: ITodoTaskList) => task.category === category.id)
+              .map((todoItem: ITodoTaskList) => (
+                <TodoItem
+                  key={todoItem.id}
+                  taskName={todoItem.task}
+                  id={todoItem.id}
+                  status={todoItem.done}
+                  toggleTaskStatus={toggleTaskStatus}
+                  removeTask={removeTask}
+                />
+              ))}
+          </div>
+        ))}
+      </>
+    );
   } else {
     return <div className="task-list-empty">Задачи отсутствуют</div>;
   }
